@@ -3,9 +3,10 @@ body {
 	color: black;
 	background-color: black;
 	font-family: "Georgia", serif;
-	font-size: 14px;
+	/* font-size: 14px; */
 	line-height: 1.5;
 	letter-spacing: 0.02em;
+	margin: 0px; /* matters more for mobile */
 }
 
 
@@ -25,19 +26,18 @@ a:hover {
 a:active {
 	text-decoration:underline;
 	}
-	
+
 
 a, img {
     border:none;
 }
-	
+
 
 #whiteBackgroundContainer {
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
 	background-color:rgba(255,255,255,0.90);
-	
 }
 
 #imageContainer {
@@ -50,8 +50,8 @@ a, img {
 	background-repeat:repeat-y;
 	background-position:center top;
 	background-attachment: fixed;
-	
-	
+
+
 	/*
 	#imageContainer {
 	width: 1000px;
@@ -61,7 +61,7 @@ a, img {
 	margin-right: auto;
 	background-image: url('../images/KaerMagaBackground1000med.jpg');
 	background-repeat:repeat-y;
-	background-position:center top; 
+	background-position:center top;
 	background-attachment: fixed; */
 }
 
@@ -73,6 +73,8 @@ a, img {
 	margin-top: 0px;
 	margin-bottom: 0px;
 	/* position: relative; */
+	/* overflow: hidden; */
+	/* word-break: break-all; */
 }
 
 
@@ -80,10 +82,10 @@ a, img {
  div {
 	display: block;
  }
- 
+
  .center {
 	text-align: center;
-	
+
 }
 
 .centerBlock {
@@ -99,55 +101,50 @@ a, img {
 	float: left;
 	padding-right: 10px;
  }
- 
+
  .floatRight {
 	float: right;
 	padding-left: 10px;
  }
- 
+
  img {
-	vertical-align: top; 
-	
+	vertical-align: top;
 }
  /*end general use CSS */
 
  /*footer styles */
  #footerImage {
 	background-color: black;
-	/* padding-top: 5px; */
-	/* padding-left: 5px; */
-	/* padding-bottom: 5px; */
 	padding: 5px;
-	margin-top: 10px;
 }
- #footSocialIcons {
+#footerImage > a {
+	background-image: url('../images/Footer110.jpg');
+	display: block;
+	text-decoration: none;
+}
+/* #footSocialIcons {
 	position: absolute;
 	top: 10px;
 	left: 10px;
 	z-index: 2;
-	
- }
- 
- #footer {
-	position: relative;
-	
- }
- 
+ } */
+
+#footer {
+	margin-top: 20px;
+}
+
  #footerText {
-	position: absolute;
-	bottom: 10px;
-	left: 10px;
-	margin-right: 5px;
 	font-size: .8em;
 	color: #372115;
-	margin-top: 37px;
 	max-height: 999999px;
- }
+	padding: 10px 4px;
+}
 
  /*header styles */
 #headImage {
+	position: relative;
 	background-color: black;
-	padding: 5px;
+	padding: 0px;
 	margin-bottom: 10px;
 }
 #headImage > a > img,
@@ -157,15 +154,15 @@ a, img {
  #headSocialIcons {
 	position: absolute;
 	/* z-index: 1; */
-	top: 42px;
-	right: 82px;
-	}
- 
+	top: 12px;
+	right: 10px;
+}
+
  #navMenu {
 	margin-top: 5px;
- }
+}
 
- 
+
 /* Begin fancy drop-down menu code.  From http://www.handy-html.com/create-a-simple-css-dropdown-menu/ and modified by me.*/
 #navMenu ul {
     font-family: Arial, Verdana;
@@ -173,10 +170,9 @@ a, img {
     margin: 0;
     padding: 0;
     list-style: none;
-	
 }
 /* this is applied only to the uls that are direct children of the #navMenu, and then again only to the direct li children of that ul */
-#navMenu > div > ul > li {
+#navMenu > div > div > ul > li {
     display: block;
     position: relative;
     float: left;
@@ -194,7 +190,6 @@ li ul {
     font-weight: bold;
     padding: 5px 15px 5px 15px;
     background: #851A18;
-    margin-left: 1px;
     white-space: nowrap;
     /* z-index: 2 */
 }
@@ -213,7 +208,7 @@ li:hover li {
     font-size: 11px;
 	z-index: 2
 }
-#navMenu li:hover a { 
+#navMenu li:hover a {
 	background: #372115;
 	z-index: 2
 }
@@ -225,19 +220,59 @@ li:hover li {
 }
 
 #mobileMenu {
+	background-color: #851A18;
+}
+#mobileMenu > svg {
+	padding: 0px 3px;
 	display: none;
+	cursor: pointer;
+	fill: white;
 }
 
-@media only screen and (max-width: 600px) {
-	#mobileMenu {
+img, iframe {
+	max-width:100%;
+}
+
+@media only screen and (max-width: 500px) {
+	#mobileMenu > svg {
 	  display: block;
+	}
+	#mobileMenu #menu {
+		display: none;
+	}
+	#mobileMenu:hover svg {
+		background: #372115;
+	}
+	#mobileMenu:hover #menu {
+		display: block;
 	}
 	#menu {
 		position: absolute;
 	}
-	#navMenu > div > ul > li {
+	#navMenu > div > div > ul > li {
 		float: unset;
 		width: unset;
+	}
+	#navMenu > div > div > ul ul {
+		position: absolute;
+		left: 99%;
+		top: 1px;
+	}
+	#navMenu li {
+		margin-top: -1px; /* weird that need this, not sure why*/
+	}
+	#headImage .clear {
+		display: none;
+	}
+	#container {
+		padding: 8px;
+	}
+	#headSocialIcons {
+		top: 0px;
+		right: 0px;
+	}
+	.landing-page-link {
+		max-height: 180px;
 	}
 }
 
@@ -245,15 +280,13 @@ li:hover li {
 
 /* begin styles for home page */
 .landing-page-link {
-	/* display: inline-block; */
-	/* margin: 5px; */
+	margin: 5px;
 	padding-bottom: 10px;
+	overflow: hidden;
 }
 
 #content-homepage {
 	margin-top: 20px;
-	
-	
 }
 /* end styles for home page */
 
@@ -265,7 +298,12 @@ li:hover li {
 	margin-right: 15px;
 	margin-bottom: 10px;
 	clear: both;
-
+}
+@media only screen and (max-width: 500px) {
+	.bookCover {
+		display: inline-block;
+		float: unset;
+	}
 }
 
 #amznBest {
@@ -293,9 +331,9 @@ li:hover li {
 	padding-top: 1em;
 	padding-bottom: 10px;
 	margin-bottom: 30px;
-	
+
 	//border-bottom: thin solid;
-	
+
 }
 
 .nonFicBlurb {
@@ -350,17 +388,16 @@ li:hover li {
 	color: black;
 	padding-top: 20px;
  }
- 
+
  .blogContent {
 	margin-bottom: 30px;
 	border-bottom: thin solid;
  }
- 
+
  .blogContent img {
 	padding: 10px;
-	
  }
- 
+
  .blogTitle a:link {
 	text-decoration:none;
 	color: black;
@@ -370,16 +407,16 @@ li:hover li {
 	color: black;
 	}
  /*end styles for blog page aka news */
- 
+
  /*begin styles for music section */
 .bandName {
 	font-weight: bold;
 	font-size: 150%;
 }
- 
+
 #shadow-audio-player {
 	margin-left: 450px;
-} 
+}
 
 #sOfS {
 	float:right;
@@ -400,15 +437,15 @@ li:hover li {
 }
 
  /*end styles for music section */
- 
+
  /*begin styles for about and contact pages*/
 .reviewTitle {
 	font-size: 1.20em;
 	font-weight: bold;
 }
- 
+
  /*end styles for about and contact page*/
- 
+
  /*Begin CSS for testing things.  Delete at the very end? */
- 
+
  /*End CSS for testing things.  Delete at the very end? */

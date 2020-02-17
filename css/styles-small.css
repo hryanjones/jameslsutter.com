@@ -2,8 +2,7 @@
  #footerText {
 	max-height: 999999px;
 	font-size: .6em;
-	//-webkit-text-size-adjust: none;
-	
-		
- }
+	padding: 10px 0px;
+	-webkit-text-size-adjust: none;
+	}
  
