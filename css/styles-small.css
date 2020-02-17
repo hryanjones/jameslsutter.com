@@ -1,0 +1,9 @@
+/*CSS for mobile browsers*/
+ #footerText {
+	max-height: 999999px;
+	font-size: .6em;
+	//-webkit-text-size-adjust: none;
+	
+		
+ }
+ 
