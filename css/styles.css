@@ -50,19 +50,6 @@ a, img {
 	background-repeat:repeat-y;
 	background-position:center top;
 	background-attachment: fixed;
-
-
-	/*
-	#imageContainer {
-	width: 1000px;
-	padding-top: 25px;
-	padding-bottom: 25px;
-	margin-left: auto;
-	margin-right: auto;
-	background-image: url('../images/KaerMagaBackground1000med.jpg');
-	background-repeat:repeat-y;
-	background-position:center top;
-	background-attachment: fixed; */
 }
 
 #container {
@@ -160,6 +147,7 @@ a, img {
 
  #navMenu {
 	margin-top: 5px;
+	background: #851A18;
 }
 
 
@@ -219,14 +207,14 @@ li:hover li {
 	z-index: 2
 }
 
-#mobileMenu {
-	background-color: #851A18;
-}
-#mobileMenu > svg {
-	padding: 0px 3px;
+#hamburger {
 	display: none;
 	cursor: pointer;
 	fill: white;
+	height: 32px; /* shouldn't have to specify this */
+}
+#hamburger svg {
+	padding: 2px 3px;
 }
 
 img, iframe {
@@ -234,16 +222,16 @@ img, iframe {
 }
 
 @media only screen and (max-width: 500px) {
-	#mobileMenu > svg {
+	#hamburger {
 	  display: block;
 	}
-	#mobileMenu #menu {
+	#menu {
 		display: none;
 	}
-	#mobileMenu:hover svg {
+	#navMenu:hover svg {
 		background: #372115;
 	}
-	#mobileMenu:hover #menu {
+	#navMenu:hover #menu {
 		display: block;
 	}
 	#menu {
