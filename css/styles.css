@@ -60,7 +60,7 @@ a, img {
 	margin-top: 0px;
 	margin-bottom: 0px;
 	/* position: relative; */
-	/* overflow: hidden; */
+	overflow: hidden;
 	/* word-break: break-all; */
 }
 
@@ -160,7 +160,7 @@ a, img {
     list-style: none;
 }
 /* this is applied only to the uls that are direct children of the #navMenu, and then again only to the direct li children of that ul */
-#navMenu > div > div > ul > li {
+#navMenu > div > ul > li {
     display: block;
     position: relative;
     float: left;
@@ -218,7 +218,8 @@ li:hover li {
 }
 
 img, iframe {
-	max-width:100%;
+	max-width: 100%;
+	height: auto;
 }
 
 @media only screen and (max-width: 500px) {
@@ -237,11 +238,11 @@ img, iframe {
 	#menu {
 		position: absolute;
 	}
-	#navMenu > div > div > ul > li {
+	#navMenu > div > ul > li {
 		float: unset;
 		width: unset;
 	}
-	#navMenu > div > div > ul ul {
+	#navMenu > div > ul ul {
 		position: absolute;
 		left: 99%;
 		top: 1px;
@@ -281,15 +282,16 @@ img, iframe {
 /*begin styles for writing section */
 .bookCover {
 	float: left;
-	margin-right: 10px;
+	clear: both;
+}
+.bookCover img {
 	box-shadow: 5px 5px 5px #888888;
 	margin-right: 15px;
 	margin-bottom: 10px;
-	clear: both;
 }
 @media only screen and (max-width: 500px) {
 	.bookCover {
-		display: inline-block;
+		display: block;
 		float: unset;
 	}
 }
@@ -402,8 +404,17 @@ img, iframe {
 	font-size: 150%;
 }
 
-#shadow-audio-player {
-	margin-left: 450px;
+.flex-with-wrap {
+	display: flex;
+	flex-wrap: wrap;
+}
+.flex-with-wrap > img {
+	margin: 0px 30px 15px 0px;
+	box-shadow: 5px 5px 5px #888888;
+}
+#jp_container_sdVid {
+	/* width: 100%; */
+	max-width: 480px;
 }
 
 #sOfS {
@@ -411,17 +422,15 @@ img, iframe {
 }
 
 .sdCoverImg {
-	box-shadow: 5px 5px 5px #888888;
 	width: 250px;
-	float: left;
 }
 
 #sdKick-audio-player {
-	margin-left: 350px;
+	/* margin-left: 350px; */
 }
 
 #sdWhere-audio-player {
-	margin-left: 350px;
+	/* margin-left: 350px; */
 }
 
  /*end styles for music section */
