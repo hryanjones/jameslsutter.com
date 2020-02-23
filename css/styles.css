@@ -217,9 +217,12 @@ li:hover li {
 	padding: 2px 3px;
 }
 
-img, iframe {
+img {
 	max-width: 100%;
 	height: auto;
+}
+iframe {
+	max-width: 100%;
 }
 
 @media only screen and (max-width: 500px) {
