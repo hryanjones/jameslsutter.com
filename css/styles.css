@@ -433,6 +433,9 @@ img, iframe {
 	/* margin-left: 350px; */
 }
 
+#jp_container_byLand .jp-video-play {
+	display: none !important;
+}
  /*end styles for music section */
 
  /*begin styles for about and contact pages*/
