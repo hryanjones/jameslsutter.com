@@ -410,6 +410,7 @@ iframe {
 .flex-with-wrap {
 	display: flex;
 	flex-wrap: wrap;
+	align-items: flex-start;
 }
 .flex-with-wrap > img {
 	margin: 0px 30px 15px 0px;
